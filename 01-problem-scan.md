@@ -1,16 +1,18 @@
 # 🔍 Phase 1 — SCAN & QUICK-ASSESS (Vin Smart Future)
 
+> **Bản tổng hợp chọn lọc từ ý tưởng của Nhóm (Bảo & Duy)**
+
 ---
 
-## 📝 1. Danh sách 5 Bài toán Vận hành (Problem List)
+## 📝 1. Danh sách 5 Bài toán Vận hành Chọn lọc (Problem List)
 
-| # | Subsidiary (Công ty) | Lens (Ống kính) | Mô tả ngắn bài toán & Bottleneck |
-|---|---|---|---|
-| 1 | **VinFast – Xưởng dịch vụ** | 🔁 **Repetitive** (Lặp lại) | **Gọi điện chăm sóc sau sửa chữa/bảo dưỡng cho từng khách hàng:** Quy trình VinFast quy định khách làm dịch vụ được liên hệ để ghi nhận phản hồi sau khi xe ra xưởng; khi mạng lưới đạt 350 xưởng dịch vụ (11/2025), đây là một workflow lặp lại quy mô lớn. |
-| 2 | **VinFast – After-sales** | ⏱ **Time-consuming** (Tốn thời gian) | **Tiếp nhận và chẩn đoán xe trước sửa chữa:** Khách mô tả lỗi + gửi hình ảnh; xưởng phải tiếp nhận, đánh giá tình trạng, xác định hạng mục, thời gian sửa chữa và báo giá. Các ca "chẩn đoán khó" gây tốn nhiều thời gian của kỹ thuật viên. |
-| 3 | **Xanh SM** | 😣 **Stakeholder Pain** (Nỗi đau) | **ETA và điểm đón chưa chính xác làm khách chờ/tài xế tìm khách:** Review App Store 17/12/2025 ghi nhận ETA 5 phút biến thành 30 phút. Phản ánh khác cho thấy app xác định sai vị trí đón 3 lần liên tiếp tại cùng địa điểm. |
-| 4 | **Vinhomes** | 😣 **Stakeholder Pain** + ⏱ **Time-consuming** | **Đồng bộ thông tin cư dân/thẻ ra vào/thẻ gửi xe kéo dài:** Review Vinhomes Resident 25/8/2026 phản ánh quá trình đồng bộ app mất 1 tuần, cư dân chưa làm được thẻ gửi xe và phải trả 32.000đ/tối tiền gửi xe vãng lai. |
-| 5 | **Vinhomes** | 🤖 **AI-upgrade** (AI làm tốt hơn) | **Luồng đặt tiện ích trên app còn friction:** Review 4/8/2026 phản ánh trải nghiệm "đặt lịch tiện ích trên app" rất bất tiện. Cư dân gặp khó khăn khi thao tác hoặc phải chờ BQL hỗ trợ thủ công. |
+| # | Subsidiary (Công ty) | Lens (Ống kính) | Mô tả ngắn bài toán & Bottleneck | Nguồn đóng góp |
+|---|---|---|---|---|
+| 1 | **Xanh SM (GSM)** | 😣 **Stakeholder Pain** + ⏱ **Time-consuming** | **Điều phối & xử lý sự cố hết pin thực địa:** Điều phối viên phải tra cứu vị trí GPS, tìm trạm sạc VinFast còn trụ trống phù hợp và soạn SMS chỉ dẫn thủ công cho tài xế (mất **15 phút/lượt**). | *Duy & Bảo* |
+| 2 | **VinFast – After-sales** | ⏱ **Time-consuming** (Tốn thời gian) | **Tiếp nhận & chẩn đoán xe trước sửa chữa:** Khách hàng mô tả lỗi + gửi hình ảnh; xưởng phải tiếp nhận, đánh giá tình trạng, tra cứu tài liệu chẩn đoán ca khó và lập báo giá thủ công (**20–30 phút/ca**). | *Bảo* |
+| 3 | **Vinhomes** | 😣 **Stakeholder Pain** + ⏱ **Time-consuming** | **Đồng bộ hồ sơ cư dân & thẻ ra vào/thẻ xe:** Quá trình đối chiếu giấy tờ và đồng bộ app kéo dài cả tuần (7 ngày), khiến cư dân chưa làm được thẻ ra vào/xe và phải chịu phí gửi xe vãng lai hàng ngày. | *Bảo* |
+| 4 | **Vinmec** | 😣 **Stakeholder Pain** (Nỗi đau bác sĩ) | **Tóm tắt hồ sơ bệnh án & phiếu xuất viện:** Bác sĩ mất **20–30 phút** cho mỗi bệnh nhân để đọc lại toàn bộ lịch sử khám, thay đổi đơn thuốc và viết tay bản tóm tắt xuất viện, gây quá tải khối lượng công việc. | *Duy* |
+| 5 | **Vinpearl** | 🤖 **AI-upgrade** + ⏱ **Time-consuming** | **Xử lý yêu cầu đặt phòng đoàn (Group Booking):** Nhân viên booking phải đọc thủ công các email/yêu cầu đặt phòng phức tạp theo đoàn và đối chiếu danh sách phòng trống trên nhiều hệ thống. | *Duy* |
 
 ---
 
@@ -18,28 +20,28 @@
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│ QUICK PROBLEM CARD #1                                                       │
+│ QUICK PROBLEM CARD #1 (XANH SM)                                            │
 │                                                                             │
-│ Bài toán (1 câu): Đặt vị trí đón thực tế & tính toán ETA chính xác cho Xanh SM│
+│ Bài toán (1 câu): Điều phối & hỗ trợ khẩn cấp tài xế Xanh SM báo sự cố hết pin│
 │ Công ty thành viên: [x] Xanh SM (GSM)                                       │
 │                                                                             │
-│ Ai đang đau (Actor): Khách hàng đi taxi/xe máy điện và Tài xế Xanh SM.       │
+│ Ai đang đau (Actor): Tài xế Xanh SM & Điều phối viên tổng đài.              │
 │                                                                             │
 │ Workflow thủ công hiện tại:                                                 │
-│   1. Khách đặt xe ──> 2. App ghim GPS thô ──> 3. Tài xế đi theo map ──>    │
-│   4. Gọi điện tìm nhau tại điểm đón (cổng TTTM/chung cư).                  │
+│   1. Nhận điện thoại sự cố ──> 2. Định vị GPS xe ──> 3. Tra trạm sạc trống  │
+│   ──> 4. Soạn SMS hướng dẫn ──> 5. Điều xe cứu hộ nếu pin < 5%.              │
 │                                                                             │
-│ Bước tốn thời gian/lỗi nhất: Tài xế dò tìm điểm đón thực tế (⏱ 10-15 min).   │
-│ AI nhảy vào ở bước nào: AI đọc GPS + lịch sử đón ──> Chuẩn hóa điểm đón thực│
+│ Bước tốn thời gian/lỗi nhất: Tra trạm sạc trống & Soạn SMS (⏱ 10/15 min).   │
+│ AI nhảy vào ở bước nào: AI auto-pull GPS ──> Tra trụ trống ──> Draft SMS.   │
 │                                                                             │
-│ Đo thành công bằng gì: Giảm thời gian chờ/tìm điểm đón từ 10 min ──> < 2 min. │
-│ Quick Architecture: [ ] No AI  [ ] Rule  [ ] LLM  [x] Agent                 │
+│ Đo thành công bằng gì: Giảm thời gian xử lý từ 15 min ──> < 3 min.         │
+│ Quick Architecture: [ ] No AI  [ ] Rule  [x] LLM Feature  [ ] Agent         │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│ QUICK PROBLEM CARD #2                                                       │
+│ QUICK PROBLEM CARD #2 (VINFAST)                                             │
 │                                                                             │
 │ Bài toán: Hỗ trợ tiếp nhận & chẩn đoán sơ bộ sự cố xe điện VinFast           │
 │ Công ty thành viên: [x] VinFast                                             │
@@ -54,27 +56,27 @@
 │ AI nhảy vào ở bước nào: AI phân tích hình ảnh/mô tả ──> Gợi ý mã lỗi & vật tư│
 │                                                                             │
 │ Đo thành công bằng gì: Giảm thời gian chẩn đoán ban đầu từ 25 min ──> < 5 min.│
-│ Quick Architecture: [ ] No AI  [ ] Rule  [x] LLM  [ ] Agent                 │
+│ Quick Architecture: [ ] No AI  [ ] Rule  [x] LLM Feature  [ ] Agent         │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│ QUICK PROBLEM CARD #3                                                       │
+│ QUICK PROBLEM CARD #3 (VINMEC)                                              │
 │                                                                             │
-│ Bài toán: Tự động hóa kiểm tra & đồng bộ hồ sơ thẻ cư dân Vinhomes           │
-│ Công ty thành viên: [x] Vinhomes                                            │
+│ Bài toán: Tự động tổng hợp & soạn thảo bản nháp tóm tắt xuất viện Vinmec    │
+│ Công ty thành viên: [x] Vinmec                                              │
 │                                                                             │
-│ Ai đang đau (Actor): Cư dân Vinhomes & Nhân viên Ban quản lý khu đô thị.    │
+│ Ai đang đau (Actor): Bác sĩ điều trị & Đội ngũ quản lý hồ sơ bệnh án.       │
 │                                                                             │
 │ Workflow thủ công hiện tại:                                                 │
-│   1. Cư dân nộp hồ sơ trên app ──> 2. BQL kiểm tra giấy tờ ──>              │
-│   3. Đối chiếu dữ liệu căn hộ ──> 4. Kích hoạt thẻ ra vào/xe.               │
+│   1. Xem lại lịch sử khám ──> 2. Tổng hợp thay đổi thuốc ──>                │
+│   3. Viết văn bản tóm tắt xuất viện ──> 4. Bác sĩ kiểm tra & ký duyệt.      │
 │                                                                             │
-│ Bước tốn thời gian/lỗi nhất: Nhân viên BQL đối chiếu giấy tờ thủ công (7 ngày)│
-│ AI nhảy vào ở bước nào: OCR đọc giấy tờ ──> AI xác minh dữ liệu ──> Duyệt tự động│
+│ Bước tốn thời gian/lỗi nhất: Đọc trích xuất dữ liệu & viết tóm tắt (⏱ 20 min).│
+│ AI nhảy vào ở bước nào: AI trích xuất dữ liệu ──> Draft bản nháp tóm tắt.   │
 │                                                                             │
-│ Đo thành công bằng gì: Rút ngắn thời gian duyệt thẻ từ 7 ngày ──> < 24 giờ. │
-│ Quick Architecture: [ ] No AI  [x] Rule  [x] LLM  [ ] Agent                 │
+│ Đo thành công bằng gì: Giảm 50% thời gian soạn thảo (từ 20 min ──> 8 min). │
+│ Quick Architecture: [ ] No AI  [ ] Rule  [x] LLM Feature (HITL)  [ ] Agent  │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
