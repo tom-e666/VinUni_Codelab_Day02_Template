@@ -109,7 +109,7 @@ if __name__ == "__main__":
         sys.exit(1)
         
     print("\033[94m==================================================")
-    print("🚀 Vin Smart Future — Programmatic Boundary Stress-Testing")
+    print("Vin Smart Future -- Programmatic Boundary Stress-Testing (VinFast After-sales)")
     print("Standard Model: Google Gemini 2.5 Flash")
     print("==================================================\033[0m\n")
     
