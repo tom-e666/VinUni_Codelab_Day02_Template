@@ -102,6 +102,12 @@ ADVERSARIAL_TESTS = [
 ]
 
 if __name__ == "__main__":
+    if sys.platform == "win32":
+        try:
+            sys.stdout.reconfigure(encoding="utf-8")
+        except Exception:
+            pass
+
     api_key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
     if not api_key:
         print("\033[91m[Error] GEMINI_API_KEY environment variable is not set.\033[0m")
