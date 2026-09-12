@@ -27,96 +27,130 @@ Hãy sử dụng **4 Lenses** dưới đây để quét qua hoạt động vận
 
 Chọn **top 3 bài toán** từ danh sách trên và hoàn thiện **3 Quick Problem Cards** dưới đây (10 phút/card).
 
-┌──────────────────────────────────────────────────────────────────────────────┐
-│ QUICK PROBLEM CARD #1                                                        │
-│                                                                              │
-│ Bài toán: Nhân viên CSKH Vinhomes phải đọc, phân loại và chuyển phản ánh     │
-│ của cư dân đến đúng bộ phận xử lý.                                           │
-│                                                                              │
-│ Công ty thành viên: [ ] VinFast  [ ] Xanh SM  [X] Vinhomes                  │
-│                     [ ] Vinmec   [ ] Khác                                   │
-│                                                                              │
-│ Ai đang đau (Actor)?                                                         │
-│ - Nhân viên CSKH                                                             │
-│ - Ban quản lý tòa nhà                                                        │
-│ - Cư dân gửi phản ánh                                                        │
-│                                                                              │
-│ Workflow thủ công hiện tại:                                                 │
-│ 1. Cư dân gửi phản ánh qua ứng dụng/tổng đài                                 │
-│ ──> 2. Nhân viên đọc và tóm tắt nội dung                                    │
-│ ──> 3. Xác định loại sự cố và mức độ ưu tiên                                │
-│ ──> 4. Chuyển đến bộ phận phù hợp                                           │
-│ ──> 5. Bộ phận xử lý cập nhật trạng thái                                    │
-│                                                                              │
-│ Bước tốn thời gian/lỗi nhất: Bước 2 và 3 (⏱ khoảng 7 phút/phản ánh)          │
-│ AI hỗ trợ: Tóm tắt, phân loại, phát hiện khẩn cấp, đề xuất bộ phận           │
-│ và tạo bản nháp để nhân viên duyệt.                                         │
-│                                                                              │
-│ Metric: Giảm 7 phút ──> dưới 2 phút/phản ánh; macro-F1 ≥ 90%;                │
-│ 100% phản ánh khẩn cấp được gắn cờ để nhân viên kiểm tra.                    │
-│                                                                              │
-│ Quick Architecture: [ ] No AI  [ ] Rule  [X] LLM Feature + Rule  [ ] Agent  │
-└──────────────────────────────────────────────────────────────────────────────┘
-┌──────────────────────────────────────────────────────────────────────────────┐
-│ QUICK PROBLEM CARD #2                                                        │
-│                                                                              │
-│ Bài toán: Nhân viên đặt phòng Vinpearl phải đọc email đặt phòng đoàn,        │
-│ trích xuất thông tin và nhập thủ công vào biểu mẫu.                          │
-│                                                                              │
-│ Công ty thành viên: [ ] VinFast  [ ] Xanh SM  [ ] Vinhomes                  │
-│                     [ ] Vinmec   [X] Khác: Vinpearl                         │
-│                                                                              │
-│ Ai đang đau (Actor)?                                                         │
-│ - Nhân viên đặt phòng                                                        │
-│ - Nhân viên kinh doanh                                                       │
-│ - Công ty lữ hành                                                            │
-│                                                                              │
-│ Workflow thủ công hiện tại:                                                 │
-│ 1. Nhận email đặt phòng đoàn                                                 │
-│ ──> 2. Đọc email và tệp đính kèm                                            │
-│ ──> 3. Trích xuất ngày, số khách, loại phòng và yêu cầu đặc biệt             │
-│ ──> 4. Kiểm tra thông tin thiếu/mâu thuẫn                                   │
-│ ──> 5. Nhập hệ thống và gửi email xác nhận                                  │
-│                                                                              │
-│ Bước tốn thời gian/lỗi nhất: Bước 2 và 3 (⏱ khoảng 15 phút/email)            │
-│ AI hỗ trợ: Trích xuất dữ liệu, đánh dấu thông tin thiếu/mâu thuẫn             │
-│ và tạo bản nháp email yêu cầu bổ sung.                                      │
-│                                                                              │
-│ Metric: Giảm 15 phút ──> dưới 5 phút/email; độ chính xác trường bắt buộc     │
-│ ≥ 95%; 100% trường thiếu hoặc mâu thuẫn được đánh dấu.                      │
-│                                                                              │
-│ Quick Architecture: [ ] No AI  [ ] Rule  [X] LLM Feature + Rule  [ ] Agent  │
-└──────────────────────────────────────────────────────────────────────────────┘
-┌──────────────────────────────────────────────────────────────────────────────┐
-│ QUICK PROBLEM CARD #3                                                        │
-│                                                                              │
-│ Bài toán: Nhân viên tiếp nhận VinFast phải chuẩn hóa mô tả lỗi xe và         │
-│ chuyển thông tin đến đúng nhóm kỹ thuật.                                     │
-│                                                                              │
-│ Công ty thành viên: [X] VinFast  [ ] Xanh SM  [ ] Vinhomes                  │
-│                     [ ] Vinmec   [ ] Khác                                   │
-│                                                                              │
-│ Ai đang đau (Actor)?                                                         │
-│ - Khách hàng                                                                 │
-│ - Nhân viên tổng đài/dịch vụ                                                 │
-│ - Kỹ thuật viên                                                              │
-│                                                                              │
-│ Workflow thủ công hiện tại:                                                 │
-│ 1. Khách hàng gọi hoặc gửi mô tả lỗi                                        │
-│ ──> 2. Nhân viên đọc và hỏi thêm triệu chứng                                │
-│ ──> 3. Ghi nhận thông tin vào phiếu dịch vụ                                 │
-│ ──> 4. Phân loại và chuyển nhóm kỹ thuật                                    │
-│ ──> 5. Kỹ thuật viên kiểm tra và xác nhận nguyên nhân                       │
-│                                                                              │
-│ Bước tốn thời gian/lỗi nhất: Bước 2 và 4 (⏱ khoảng 12 phút/trường hợp)      │
-│ AI hỗ trợ: Tóm tắt triệu chứng, chuẩn hóa thuật ngữ, đề xuất câu hỏi,        │
-│ gợi ý nhóm kỹ thuật và gắn cờ trường hợp nguy hiểm.                         │
-│                                                                              │
-│ Metric: Giảm 12 phút ──> dưới 5 phút/trường hợp; độ chính xác phân loại      │
-│ ≥ 85%; 100% trường hợp liên quan đến phanh, pin hoặc va chạm được gắn cờ.   │
-│                                                                              │
-│ Quick Architecture: [ ] No AI  [ ] Rule  [X] LLM Feature + Rule  [ ] Agent  │
-└──────────────────────────────────────────────────────────────────────────────┘
+## QUICK PROBLEM CARD #1
+
+**Bài toán:**  
+Nhân viên CSKH Vinhomes phải đọc phản ánh của cư dân, phân loại nội dung, xác định mức độ ưu tiên và chuyển đến đúng bộ phận xử lý.
+
+**Công ty thành viên:** [ ] VinFast  [ ] Xanh SM  [X] Vinhomes  [ ] Vinmec  [ ] Khác
+
+**Ai đang đau (Actor)?**
+
+- Nhân viên CSKH
+- Ban quản lý tòa nhà
+- Cư dân gửi phản ánh
+
+**Workflow thủ công hiện tại:**
+
+1. Cư dân gửi phản ánh qua ứng dụng hoặc tổng đài.
+2. Nhân viên CSKH đọc và tóm tắt nội dung.
+3. Nhân viên xác định loại sự cố và mức độ ưu tiên.
+4. Nhân viên chuyển phản ánh đến bộ phận phù hợp.
+5. Bộ phận xử lý cập nhật trạng thái cho cư dân.
+
+**Bước tốn thời gian/lỗi nhất:**  
+Bước 2 và 3: đọc, hiểu và phân loại phản ánh thủ công.  
+Thời gian ước tính: khoảng **7 phút/phản ánh**, cần kiểm chứng bằng dữ liệu thực tế.
+
+**AI có thể hỗ trợ ở đâu?**
+
+- Tóm tắt nội dung phản ánh.
+- Đề xuất nhãn phân loại.
+- Phát hiện dấu hiệu khẩn cấp.
+- Đề xuất bộ phận xử lý.
+- Tạo bản nháp để nhân viên kiểm tra và duyệt.
+
+**Đo thành công bằng gì?**
+
+- Giảm thời gian phân loại từ **7 phút xuống dưới 2 phút/phản ánh**.
+- Đạt **macro-F1 tối thiểu 90%** trên tập dữ liệu đã được nhân viên gán nhãn.
+- **100% phản ánh có dấu hiệu khẩn cấp** được gắn cờ để nhân viên kiểm tra.
+- AI không tự động loại bỏ hoặc gửi phản hồi khi chưa được duyệt.
+
+**Quick Architecture:** [ ] No AI  [ ] Rule  [X] LLM Feature + Rule  [ ] Agent
+## QUICK PROBLEM CARD #2
+
+**Bài toán:**  
+Nhân viên đặt phòng Vinpearl phải đọc email đặt phòng đoàn, trích xuất thông tin và nhập thủ công vào biểu mẫu.
+
+**Công ty thành viên:** [ ] VinFast  [ ] Xanh SM  [ ] Vinhomes  [ ] Vinmec  [X] Khác: Vinpearl
+
+**Ai đang đau (Actor)?**
+
+- Nhân viên đặt phòng
+- Nhân viên kinh doanh
+- Công ty lữ hành
+
+**Workflow thủ công hiện tại:**
+
+1. Nhân viên nhận email đặt phòng đoàn.
+2. Nhân viên đọc email và tệp đính kèm.
+3. Nhân viên trích xuất ngày đến, ngày đi, số khách, loại phòng và yêu cầu đặc biệt.
+4. Nhân viên kiểm tra thông tin còn thiếu hoặc mâu thuẫn.
+5. Nhân viên nhập dữ liệu vào hệ thống và gửi email xác nhận.
+
+**Bước tốn thời gian/lỗi nhất:**  
+Bước 2 và 3: đọc email, tìm thông tin và nhập lại dữ liệu.  
+Thời gian ước tính: khoảng **15 phút/email**, cần kiểm chứng bằng log xử lý.
+
+**AI có thể hỗ trợ ở đâu?**
+
+- Đọc email và tệp đính kèm.
+- Trích xuất các trường thông tin đặt phòng.
+- Đánh dấu trường còn thiếu hoặc mâu thuẫn.
+- Tạo bản nháp email yêu cầu bổ sung thông tin.
+
+**Đo thành công bằng gì?**
+
+- Giảm thời gian xử lý từ **15 phút xuống dưới 5 phút/email**.
+- Độ chính xác trích xuất các trường bắt buộc đạt tối thiểu **95%**.
+- **100% trường thiếu hoặc mâu thuẫn** được đánh dấu để nhân viên kiểm tra.
+- Không tự động xác nhận hoặc giữ phòng khi chưa có nhân viên duyệt.
+
+**Quick Architecture:** [ ] No AI  [ ] Rule  [X] LLM Feature + Rule Validation  [ ] Agent
+
+## QUICK PROBLEM CARD #3
+
+**Bài toán:**  
+Nhân viên tiếp nhận VinFast phải chuẩn hóa mô tả lỗi xe bằng ngôn ngữ đời thường và chuyển thông tin đến đúng nhóm kỹ thuật.
+
+**Công ty thành viên:** [X] VinFast  [ ] Xanh SM  [ ] Vinhomes  [ ] Vinmec  [ ] Khác
+
+**Ai đang đau (Actor)?**
+
+- Khách hàng
+- Nhân viên tổng đài/dịch vụ
+- Kỹ thuật viên
+
+**Workflow thủ công hiện tại:**
+
+1. Khách hàng gọi hoặc gửi mô tả lỗi xe.
+2. Nhân viên đọc và hỏi thêm triệu chứng.
+3. Nhân viên ghi nhận thông tin vào phiếu dịch vụ.
+4. Nhân viên phân loại lỗi và chuyển đến nhóm kỹ thuật.
+5. Kỹ thuật viên kiểm tra và xác nhận nguyên nhân.
+
+**Bước tốn thời gian/lỗi nhất:**  
+Bước 2 và 4: hỏi lại, chuẩn hóa mô tả và phân loại nhóm kỹ thuật.  
+Thời gian ước tính: khoảng **12 phút/trường hợp**, cần kiểm chứng bằng dữ liệu thực tế.
+
+**AI có thể hỗ trợ ở đâu?**
+
+- Tóm tắt triệu chứng khách hàng mô tả.
+- Chuẩn hóa các thuật ngữ kỹ thuật.
+- Đề xuất câu hỏi bổ sung.
+- Gợi ý nhóm kỹ thuật tiếp nhận.
+- Gắn cờ các trường hợp có dấu hiệu nguy hiểm.
+
+**Đo thành công bằng gì?**
+
+- Giảm thời gian tiếp nhận từ **12 phút xuống dưới 5 phút/trường hợp**.
+- Độ chính xác phân loại nhóm kỹ thuật đạt tối thiểu **85%**.
+- **100% trường hợp** liên quan đến phanh, pin, nhiệt độ hoặc va chạm được gắn cờ để nhân viên kiểm tra.
+- AI không tự chẩn đoán cuối cùng hoặc hướng dẫn sửa chữa nguy hiểm.
+
+**Quick Architecture:** [ ] No AI  [ ] Rule  [X] LLM Feature + Rule Safety Check  [ ] Agent
+
 > [!TIP]
 > **🤖 AI Prompts — Stress-Test thẻ bài toán:**
 > Hãy dán nội dung thẻ bài toán của bạn vào LLM để nhận phản biện:
