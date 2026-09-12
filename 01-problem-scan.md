@@ -1,6 +1,6 @@
 # 🔍 Phase 1 — SCAN & QUICK-ASSESS (Vin Smart Future)
 
-> **Bản tổng hợp & Xếp hạng bài toán xuất sắc nhất từ Nhóm (Tiến, Duy & Luận)**
+> **Bản tổng hợp & Xếp hạng bài toán xuất sắc nhất từ Nhóm (Tiến, Duy & Luân)**
 
 ---
 
@@ -9,10 +9,10 @@
 | Hạng | Subsidiary (Công ty) | Lens (Ống kính) | Mô tả ngắn bài toán & Bottleneck | Nguồn đóng góp |
 |---|---|---|---|---|
 | 🥇 **#1** | **Xanh SM (GSM)** | 😣 **Stakeholder Pain** + ⏱ **Time-consuming** | **Điều phối khẩn cấp sự cố pin xe điện (< 5%):** Điều phối viên phải tra định vị GPS, tìm trạm sạc VinFast còn trụ trống phù hợp và soạn SMS chỉ dẫn thủ công cho tài xế (**15 phút/lượt**). Nguy cơ sập nguồn mid-route gây tắc nghẽn giao thông. | *Tiến & Duy* |
-| 🥈 **#2** | **VinFast – After-sales** | ⏱ **Time-consuming** (Tốn thời gian) | **Tiếp nhận & chẩn đoán xe trước sửa chữa:** Khách hàng mô tả lỗi + gửi hình ảnh; xưởng phải tiếp nhận, tra cứu tài liệu chẩn đoán ca khó và lập báo giá thủ công (**20–30 phút/ca**). | *Tiến & Luận* |
+| 🥈 **#2** | **VinFast – After-sales** | ⏱ **Time-consuming** (Tốn thời gian) | **Tiếp nhận & chẩn đoán xe trước sửa chữa:** Khách hàng mô tả lỗi + gửi hình ảnh; xưởng phải tiếp nhận, tra cứu tài liệu chẩn đoán ca khó và lập báo giá thủ công (**20–30 phút/ca**). | *Tiến & Luân* |
 | 🥉 **#3** | **Vinmec** | 😣 **Stakeholder Pain** (Nỗi đau bác sĩ) | **Tóm tắt hồ sơ bệnh án & phiếu xuất viện:** Bác sĩ mất **20–30 phút** cho mỗi bệnh nhân để đọc lại toàn bộ lịch sử khám, thay đổi đơn thuốc và viết tay bản tóm tắt xuất viện, gây quá tải khối lượng công việc. | *Duy* |
-| 🏅 **#4** | **Vinhomes** | 🤖 **AI-upgrade** + ⏱ **Time-consuming** | **Phân loại & tự động route phản ánh cư dân:** Nhân viên CSKH tốn **7 phút/phản ánh** để đọc, phân loại sự cố và gán nhãn thủ công. Cần AI tự động tóm tắt, gắn nhãn khẩn cấp và đề xuất bộ phận xử lý. | *Luận & Tiến* |
-| 🏅 **#5** | **Vinpearl** | ⏱ **Time-consuming** (Tốn thời gian) | **Trích xuất yêu cầu đặt phòng đoàn (Group Booking):** Nhân viên booking mất **15 phút/email** để đọc thủ công các email đặt phòng phức tạp theo đoàn và đối chiếu danh sách phòng trống trên nhiều hệ thống. | *Duy & Luận* |
+| 🏅 **#4** | **Vinhomes** | 🤖 **AI-upgrade** + ⏱ **Time-consuming** | **Phân loại & tự động route phản ánh cư dân:** Nhân viên CSKH tốn **7 phút/phản ánh** để đọc, phân loại sự cố và gán nhãn thủ công. Cần AI tự động tóm tắt, gắn nhãn khẩn cấp và đề xuất bộ phận xử lý. | *Luân & Tiến* |
+| 🏅 **#5** | **Vinpearl** | ⏱ **Time-consuming** (Tốn thời gian) | **Trích xuất yêu cầu đặt phòng đoàn (Group Booking):** Nhân viên booking mất **15 phút/email** để đọc thủ công các email đặt phòng phức tạp theo đoàn và đối chiếu danh sách phòng trống trên nhiều hệ thống. | *Duy & Luân* |
 
 ---
 
