@@ -1,7 +1,7 @@
 # 📓 Phase 6 — AI Log & Reflection (Vin Smart Future)
 
 > **Bản Phản ánh Chuyên sâu (Comprehensive AI Thought-Partner Reflection)**
-> * **Người thực hiện:** AI Product Engineer — Vin Smart Future (Vingroup)
+> * **Người thực hiện:** Tiến (AI Product Engineer — Vin Smart Future)
 > * **Đối tác AI (Thought-Partner):** Gemini 3.6 Flash / Antigravity Agent
 > * **Dự án áp dụng:** Xanh SM Intelligent Dispatcher & Emergency Charging Co-pilot
 
