@@ -63,11 +63,11 @@ Hãy sử dụng **4 Lenses** dưới đây để quét qua hoạt động vận
 ### 📝 List bài toán của tôi:
 | # | Subsidiary (VinFast/Xanh SM...) | Lens | Mô tả ngắn bài toán |
 |---|----------------------------------|------|---------------------|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
-| 4 | | | |
-| 5 | | | |
+| 1 |VinFast |🔁 Repetitive + ⏱️ Time-consuming |Phân tích cảnh báo lỗi xe: Nhân viên phải đọc và đối chiếu hàng nghìn mã lỗi, log xe và lịch sử sửa chữa để xác định nguyên nhân. Ước tính có thể gây hàng nghìn giờ công/tháng. |
+| 2 |Xanh SM |⏱️ Time-consuming + 👥 Stakeholder Pain |Xử lý khiếu nại chuyến đi: CSKH phải đọc complaint, kiểm tra GPS, lịch sử chuyến và thông tin tài xế để xác minh. Ước tính ~250 giờ công/ngày nếu xử lý 3.000 complaint/ngày. |
+| 3 |Vinhomes |🔁 Repetitive + 🤖 AI-upgrade |Phân loại và chuyển tiếp yêu cầu cư dân: Nhân viên phải đọc từng ticket, xác định loại sự cố, tòa nhà, mức độ ưu tiên rồi chuyển cho bộ phận phù hợp. Ước tính ~420–670 giờ công/tháng. |
+| 4 |Vinmec |🔁 Repetitive + ⏱️ Time-consuming |Trích xuất thông tin từ hồ sơ bệnh án: Nhân viên phải nhập thủ công dữ liệu từ giấy/PDF vào hệ thống. Với 2.000 hồ sơ/ngày và thêm 5 phút/hồ sơ, có thể tiêu tốn ~167 giờ công/ngày. |
+| 5 |Vinpearl |⏱️ Time-consuming + 🤖 AI-upgrade |Xử lý câu hỏi khách hàng: Nhân viên phải tra cứu booking, chính sách, vé, ưu đãi và thông tin dịch vụ để trả lời từng yêu cầu. Với 4.000 yêu cầu/ngày × 4 phút, có thể tiêu tốn ~267 giờ công/ngày. |
 
 ---
 
@@ -77,24 +77,92 @@ Chọn **top 3 bài toán** từ danh sách trên và hoàn thiện **3 Quick Pr
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│ QUICK PROBLEM CARD #___                                     │
+│ QUICK PROBLEM CARD #1                                       │
 │                                                             │
-│ Bài toán (1 câu): ________________________________________  │
-│ Công ty thành viên: [ ] VinFast  [ ] Xanh SM  [ ] Vinhomes  │
+│ Bài toán (1 câu): Tự động phân loại và hỗ trợ xử lí khiếu   │
+│ nại của khách hàng sau mỗi chuyến đi.                       │
+│ Công ty thành viên: [ ] VinFast  [X] Xanh SM  [ ] Vinhomes  │
 │                     [ ] Vinmec   [ ] Khác (Ghi rõ)________  │
 │                                                             │
-│ Ai đang đau (Actor)? ______________________________________ │
+│ Ai đang đau (Actor)? Nhân viên CSKH và khách hàng           │
 │                                                             │
 │ Workflow thủ công hiện tại (3-5 bước):                      │
-│   1. ___ ──> 2. ___ ──> 3. ___ ──> 4. ___                   │
+│ 1. Nhận complaint ──> 2. Đọc nội dung ──> 3. Kiểm tra       │
+│ lịch sử chuyến ──> 4. Xác minh ──> 5. Phản hồi khách hàng   │
 │                                                             │
-│ Bước nào tốn thời gian/lỗi nhất? ___ (⏱ ___ phút/lượt)      │
-│ AI có thể nhảy vào hỗ trợ ở bước nào? _____________________ │
+│ Bước nào tốn thời gian/lỗi nhất?                            │
+│ Đọc + xác minh complaint (~5 phút phút/lượt)                │
+│ AI có thể nhảy vào hỗ trợ ở bước nào?                       │
+│ Bước 2-4: đọc complaint, tóm tắt, phân loại nguyên nhân,    │
+│ xác định mức độ ưu tiên và đề xuất hướng xử lý.             │
 │                                                             │
-│ Đo thành công bằng gì (Metric có số)? ______________________ │
-│   VD: "Giảm thời gian soạn phản hồi từ 10 min ──> under 2 min"│
+│ Đo thành công bằng gì (Metric có số)?                       │
+│  Giảm thời gian xử lý complaint từ ~5 phút → <2 phút;       │
+│ classification accuracy ≥90%; giảm 50% workload CSKH.       │
+│                                                             │                                                       
+│ Quick Architecture: [ ] No AI  [ ] Rule  [X] LLM  [ ] Agent │
+└─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│ QUICK PROBLEM CARD #2                                       │
 │                                                             │
-│ Quick Architecture: [ ] No AI  [ ] Rule  [ ] LLM  [ ] Agent │
+│ Bài toán (1 câu):                                           │
+│ Tự động phân loại, ưu tiên và chuyển yêu cầu/khiếu nại      │
+│ của cư dân đến đúng bộ phận xử lý.                          │
+│                                                             │
+│ Công ty thành viên: [ ] VinFast  [ ] Xanh SM  [X] Vinhomes  │
+│                     [ ] Vinmec   [ ] Khác                   │
+│                                                             │
+│ Ai đang đau (Actor)?                                        │
+│ Nhân viên CSKH/Ban quản lý và cư dân                        │
+│                                                             │
+│ Workflow thủ công hiện tại (3-5 bước):                      │
+│ 1. Nhận ticket → 2. Đọc nội dung → 3. Phân loại sự cố       │
+│ → 4. Xác định bộ phận → 5. Chuyển ticket                    │
+│                                                             │
+│ Bước nào tốn thời gian/lỗi nhất?                            │
+│ Phân loại + routing ticket (~5 phút/lượt)                   │
+│                                                             │
+│ AI có thể nhảy vào hỗ trợ ở bước nào?                       │
+│ Bước 2-4: hiểu nội dung cư dân, xác định intent, địa điểm,  │
+│ mức độ ưu tiên và bộ phận phụ trách.                        │
+│                                                             │
+│ Đo thành công bằng gì (Metric có số)?                       │
+│ Giảm thời gian phân loại từ ~5 phút → <30 giây;             │
+│ routing accuracy ≥90%; giảm 50% workload CSKH.              │
+│                                                             │
+│ Quick Architecture: [ ] No AI  [ ] Rule  [X] LLM  [ ] Agent │
+└─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│ QUICK PROBLEM CARD #3                                       │
+│                                                             │
+│ Bài toán (1 câu):                                           │
+│ Tự động hỗ trợ trả lời các câu hỏi của khách về booking,    │
+│ dịch vụ, chính sách và ưu đãi.                              │
+│                                                             │
+│ Công ty thành viên: [ ] VinFast  [ ] Xanh SM  [ ] Vinhomes  │
+│                     [ ] Vinmec   [X] Khác: Vinpearl         │
+│                                                             │
+│ Ai đang đau (Actor)?                                        │
+│ Nhân viên CSKH và khách du lịch                             │
+│                                                             │
+│ Workflow thủ công hiện tại (3-5 bước):                      │
+│ 1. Nhận câu hỏi → 2. Đọc và hiểu yêu cầu → 3. Tra cứu       │
+│ booking/chính sách → 4. Soạn câu trả lời → 5. Gửi khách     │
+│                                                             │
+│ Bước nào tốn thời gian/lỗi nhất?                            │
+│ Tra cứu thông tin + soạn phản hồi (~4 phút/lượt)            │
+│                                                             │
+│ AI có thể nhảy vào hỗ trợ ở bước nào?                       │
+│ Bước 2-4: hiểu intent, truy xuất thông tin liên quan và     │
+│ tạo draft response cho nhân viên CSKH.                      │
+│                                                             │
+│ Đo thành công bằng gì (Metric có số)?                       │
+│ Giảm thời gian soạn phản hồi từ ~4 phút → <1 phút;          │
+│ ≥90% câu hỏi được xử lý đúng intent; giảm 50% workload.     │
+│                                                             │
+│ Quick Architecture: [ ] No AI  [ ] Rule  [X] LLM  [ ] Agent │
 └─────────────────────────────────────────────────────────────┘
 ```
 
