@@ -1,5 +1,5 @@
-Dưới đây là nội dung file báo cáo phân tích sâu được hoàn thiện dựa trên Quick Card #2 của bạn và bám sát cấu trúc chuẩn từ file tham khảo `02-deliverable-example.md`.
-
+> * **Họ và tên:** Nguyễn Đức Long
+> * **MSSV:** 2A202602917  
 ---
 
 # 02-deep-dive-report.md (Báo cáo Phân tích sâu)

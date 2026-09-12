@@ -1,3 +1,6 @@
+> * **Họ và tên:** Nguyễn Đức Long
+> * **MSSV:** 2A202602917  
+
 # 03-ai-log.md — Nhật ký tương tác & Phản ánh sử dụng AI (AI Log & Reflection)
 
 ## 🏛️ Bối cảnh sử dụng AI

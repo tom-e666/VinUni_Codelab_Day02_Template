@@ -1,6 +1,5 @@
 # 01-problem-scan.md — Ý tưởng cá nhân (SCAN & QUICK-ASSESS)
 
-> **Phần làm việc cá nhân của học viên, tuân thủ theo chuẩn mực Vin Smart Future (02-deliverable-example.md).**
 > 
 > * **Họ và tên:** Nguyễn Đức Long
 > * **MSSV:** 2A202602917  
