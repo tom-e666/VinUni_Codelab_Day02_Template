@@ -1,3 +1,25 @@
+# 📄 02 — Deep-Dive Report: Trợ lý chẩn đoán sơ bộ sự cố xe điện VinFast
+
+> **Vin Smart Future — Lab 02: AI Product Scoping**
+> **Mảng kinh doanh lựa chọn:** 🚗 **VinFast — Khối Dịch vụ hậu mãi (Xưởng dịch vụ uỷ quyền)**
+> **Bài toán Deep-Dive:** Quick Problem Card #2 — *Hỗ trợ tiếp nhận & chẩn đoán sơ bộ sự cố xe điện VinFast*
+>
+> ⚠️ **Ghi chú về số liệu:** Toàn bộ con số trong báo cáo là **ước tính vận hành cần kiểm chứng** bằng log DMS (Dealer Management System) và lịch sử phiếu dịch vụ (Repair Order) thực tế của xưởng trước khi đưa vào KPI chính thức.
+
+---
+
+## 🗳️ Quyết định lựa chọn bài toán của nhóm
+
+Nhóm chọn **Card #2 (VinFast — Chẩn đoán sơ bộ)** để Deep-Dive, loại 2 thẻ còn lại vì:
+
+| Thẻ | Quyết định | Lý do |
+|---|---|---|
+| **#1 Vinhomes — Phân loại phản ánh cư dân** | ❌ Loại | Bài toán phân loại văn bản thuần tuý, một **rule-based router + từ khoá** đã giải quyết được ~70% lượng ticket với chi phí gần bằng 0. Giá trị gia tăng của LLM thấp so với rủi ro. |
+| **#2 VinFast — Chẩn đoán sơ bộ** | ✅ **CHỌN** | Bottleneck là **tra cứu tri thức kỹ thuật phi cấu trúc** (sổ tay, service bulletin, lịch sử RO) — đúng thế mạnh của LLM + RAG mà rule-based không làm được. Tổn thất/lượt lớn (20–30 phút), tần suất cao, và ranh giới an toàn có thể kiểm soát bằng HITL. |
+| **#3 Vinpearl — Trích xuất email đặt phòng đoàn** | ❌ Loại | Là bài toán extraction tốt nhưng **tác động kinh doanh phân tán** (theo mùa vụ), và phần lớn email đoàn đã có template sẵn → regex/parser truyền thống xử lý được phần lớn. |
+
+---
+
 # 🏗️ Phase 3 — DEEP-DIVE (Nhóm, 85 min)
 
 ## 3.1. Current-State Workflow Mapping (25 min)
