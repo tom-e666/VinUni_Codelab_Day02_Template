@@ -1,26 +1,26 @@
 # 🔍 Phase 1 — SCAN & QUICK-ASSESS (Vin Smart Future)
 
-> **Bản tổng hợp chọn lọc từ ý tưởng của Nhóm (Tiến & Duy)**
+> **Bản tổng hợp & Xếp hạng bài toán xuất sắc nhất từ Nhóm (Tiến, Duy & Luận)**
 
 ---
 
-## 📝 1. Danh sách 5 Bài toán Vận hành Chọn lọc (Problem List)
+## 🏆 1. Bảng Xếp Hạng & Danh sách 5 Bài toán Vận hành Tốt nhất (Problem List)
 
-| # | Subsidiary (Công ty) | Lens (Ống kính) | Mô tả ngắn bài toán & Bottleneck | Nguồn đóng góp |
+| Hạng | Subsidiary (Công ty) | Lens (Ống kính) | Mô tả ngắn bài toán & Bottleneck | Nguồn đóng góp |
 |---|---|---|---|---|
-| 1 | **Xanh SM (GSM)** | 😣 **Stakeholder Pain** + ⏱ **Time-consuming** | **Điều phối & xử lý sự cố hết pin thực địa:** Điều phối viên phải tra cứu vị trí GPS, tìm trạm sạc VinFast còn trụ trống phù hợp và soạn SMS chỉ dẫn thủ công cho tài xế (mất **15 phút/lượt**). | *Duy & Tiến* |
-| 2 | **VinFast – After-sales** | ⏱ **Time-consuming** (Tốn thời gian) | **Tiếp nhận & chẩn đoán xe trước sửa chữa:** Khách hàng mô tả lỗi + gửi hình ảnh; xưởng phải tiếp nhận, đánh giá tình trạng, tra cứu tài liệu chẩn đoán ca khó và lập báo giá thủ công (**20–30 phút/ca**). | *Tiến* |
-| 3 | **Vinhomes** | 😣 **Stakeholder Pain** + ⏱ **Time-consuming** | **Đồng bộ hồ sơ cư dân & thẻ ra vào/thẻ xe:** Quá trình đối chiếu giấy tờ và đồng bộ app kéo dài cả tuần (7 ngày), khiến cư dân chưa làm được thẻ ra vào/xe và phải chịu phí gửi xe vãng lai hàng ngày. | *Tiến* |
-| 4 | **Vinmec** | 😣 **Stakeholder Pain** (Nỗi đau bác sĩ) | **Tóm tắt hồ sơ bệnh án & phiếu xuất viện:** Bác sĩ mất **20–30 phút** cho mỗi bệnh nhân để đọc lại toàn bộ lịch sử khám, thay đổi đơn thuốc và viết tay bản tóm tắt xuất viện, gây quá tải khối lượng công việc. | *Duy* |
-| 5 | **Vinpearl** | 🤖 **AI-upgrade** + ⏱ **Time-consuming** | **Xử lý yêu cầu đặt phòng đoàn (Group Booking):** Nhân viên booking phải đọc thủ công các email/yêu cầu đặt phòng phức tạp theo đoàn và đối chiếu danh sách phòng trống trên nhiều hệ thống. | *Duy* |
+| 🥇 **#1** | **Xanh SM (GSM)** | 😣 **Stakeholder Pain** + ⏱ **Time-consuming** | **Điều phối khẩn cấp sự cố pin xe điện (< 5%):** Điều phối viên phải tra định vị GPS, tìm trạm sạc VinFast còn trụ trống phù hợp và soạn SMS chỉ dẫn thủ công cho tài xế (**15 phút/lượt**). Nguy cơ sập nguồn mid-route gây tắc nghẽn giao thông. | *Tiến & Duy* |
+| 🥈 **#2** | **VinFast – After-sales** | ⏱ **Time-consuming** (Tốn thời gian) | **Tiếp nhận & chẩn đoán xe trước sửa chữa:** Khách hàng mô tả lỗi + gửi hình ảnh; xưởng phải tiếp nhận, tra cứu tài liệu chẩn đoán ca khó và lập báo giá thủ công (**20–30 phút/ca**). | *Tiến & Luận* |
+| 🥉 **#3** | **Vinmec** | 😣 **Stakeholder Pain** (Nỗi đau bác sĩ) | **Tóm tắt hồ sơ bệnh án & phiếu xuất viện:** Bác sĩ mất **20–30 phút** cho mỗi bệnh nhân để đọc lại toàn bộ lịch sử khám, thay đổi đơn thuốc và viết tay bản tóm tắt xuất viện, gây quá tải khối lượng công việc. | *Duy* |
+| 🏅 **#4** | **Vinhomes** | 🤖 **AI-upgrade** + ⏱ **Time-consuming** | **Phân loại & tự động route phản ánh cư dân:** Nhân viên CSKH tốn **7 phút/phản ánh** để đọc, phân loại sự cố và gán nhãn thủ công. Cần AI tự động tóm tắt, gắn nhãn khẩn cấp và đề xuất bộ phận xử lý. | *Luận & Tiến* |
+| 🏅 **#5** | **Vinpearl** | ⏱ **Time-consuming** (Tốn thời gian) | **Trích xuất yêu cầu đặt phòng đoàn (Group Booking):** Nhân viên booking mất **15 phút/email** để đọc thủ công các email đặt phòng phức tạp theo đoàn và đối chiếu danh sách phòng trống trên nhiều hệ thống. | *Duy & Luận* |
 
 ---
 
-## 🃏 2. Top 3 Quick Problem Cards (Phase 2)
+## 🃏 2. Top 3 Quick Problem Cards Chi Tiết (Phase 2)
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│ QUICK PROBLEM CARD #1 (XANH SM)                                            │
+│ QUICK PROBLEM CARD #1 (XANH SM — BÀI TOÁN TRỌNG TÂM TOP 1)                  │
 │                                                                             │
 │ Bài toán (1 câu): Điều phối & hỗ trợ khẩn cấp tài xế Xanh SM báo sự cố hết pin│
 │ Công ty thành viên: [x] Xanh SM (GSM)                                       │
@@ -35,13 +35,13 @@
 │ AI nhảy vào ở bước nào: AI auto-pull GPS ──> Tra trụ trống ──> Draft SMS.   │
 │                                                                             │
 │ Đo thành công bằng gì: Giảm thời gian xử lý từ 15 min ──> < 3 min.         │
-│ Quick Architecture: [ ] No AI  [ ] Rule  [x] LLM Feature  [ ] Agent         │
+│ Quick Architecture: [ ] No AI  [ ] Rule  [x] LLM Feature (HITL)  [ ] Agent  │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│ QUICK PROBLEM CARD #2 (VINFAST)                                             │
+│ QUICK PROBLEM CARD #2 (VINFAST — TOP 2)                                     │
 │                                                                             │
 │ Bài toán: Hỗ trợ tiếp nhận & chẩn đoán sơ bộ sự cố xe điện VinFast           │
 │ Công ty thành viên: [x] VinFast                                             │
@@ -62,7 +62,7 @@
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│ QUICK PROBLEM CARD #3 (VINMEC)                                              │
+│ QUICK PROBLEM CARD #3 (VINMEC — TOP 3)                                      │
 │                                                                             │
 │ Bài toán: Tự động tổng hợp & soạn thảo bản nháp tóm tắt xuất viện Vinmec    │
 │ Công ty thành viên: [x] Vinmec                                              │
