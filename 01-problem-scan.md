@@ -29,7 +29,7 @@ Chọn **top 3 bài toán** từ danh sách trên và hoàn thiện **3 Quick Pr
 
 ## QUICK PROBLEM CARD #1
 
-**Bài toán:**  
+**Bài toán:**
 Nhân viên CSKH Vinhomes phải đọc phản ánh của cư dân, phân loại nội dung, xác định mức độ ưu tiên và chuyển đến đúng bộ phận xử lý.
 
 **Công ty thành viên:** [ ] VinFast  [ ] Xanh SM  [X] Vinhomes  [ ] Vinmec  [ ] Khác
@@ -48,8 +48,8 @@ Nhân viên CSKH Vinhomes phải đọc phản ánh của cư dân, phân loại
 4. Nhân viên chuyển phản ánh đến bộ phận phù hợp.
 5. Bộ phận xử lý cập nhật trạng thái cho cư dân.
 
-**Bước tốn thời gian/lỗi nhất:**  
-Bước 2 và 3: đọc, hiểu và phân loại phản ánh thủ công.  
+**Bước tốn thời gian/lỗi nhất:**
+Bước 2 và 3: đọc, hiểu và phân loại phản ánh thủ công.
 Thời gian ước tính: khoảng **7 phút/phản ánh**, cần kiểm chứng bằng dữ liệu thực tế.
 
 **AI có thể hỗ trợ ở đâu?**
@@ -70,7 +70,7 @@ Thời gian ước tính: khoảng **7 phút/phản ánh**, cần kiểm chứng
 **Quick Architecture:** [ ] No AI  [ ] Rule  [X] LLM Feature + Rule  [ ] Agent
 ## QUICK PROBLEM CARD #2
 
-**Bài toán:**  
+**Bài toán:**
 Nhân viên đặt phòng Vinpearl phải đọc email đặt phòng đoàn, trích xuất thông tin và nhập thủ công vào biểu mẫu.
 
 **Công ty thành viên:** [ ] VinFast  [ ] Xanh SM  [ ] Vinhomes  [ ] Vinmec  [X] Khác: Vinpearl
@@ -89,8 +89,8 @@ Nhân viên đặt phòng Vinpearl phải đọc email đặt phòng đoàn, tr�
 4. Nhân viên kiểm tra thông tin còn thiếu hoặc mâu thuẫn.
 5. Nhân viên nhập dữ liệu vào hệ thống và gửi email xác nhận.
 
-**Bước tốn thời gian/lỗi nhất:**  
-Bước 2 và 3: đọc email, tìm thông tin và nhập lại dữ liệu.  
+**Bước tốn thời gian/lỗi nhất:**
+Bước 2 và 3: đọc email, tìm thông tin và nhập lại dữ liệu.
 Thời gian ước tính: khoảng **15 phút/email**, cần kiểm chứng bằng log xử lý.
 
 **AI có thể hỗ trợ ở đâu?**
@@ -111,7 +111,7 @@ Thời gian ước tính: khoảng **15 phút/email**, cần kiểm chứng bằ
 
 ## QUICK PROBLEM CARD #3
 
-**Bài toán:**  
+**Bài toán:**
 Nhân viên tiếp nhận VinFast phải chuẩn hóa mô tả lỗi xe bằng ngôn ngữ đời thường và chuyển thông tin đến đúng nhóm kỹ thuật.
 
 **Công ty thành viên:** [X] VinFast  [ ] Xanh SM  [ ] Vinhomes  [ ] Vinmec  [ ] Khác
@@ -130,8 +130,8 @@ Nhân viên tiếp nhận VinFast phải chuẩn hóa mô tả lỗi xe bằng n
 4. Nhân viên phân loại lỗi và chuyển đến nhóm kỹ thuật.
 5. Kỹ thuật viên kiểm tra và xác nhận nguyên nhân.
 
-**Bước tốn thời gian/lỗi nhất:**  
-Bước 2 và 4: hỏi lại, chuẩn hóa mô tả và phân loại nhóm kỹ thuật.  
+**Bước tốn thời gian/lỗi nhất:**
+Bước 2 và 4: hỏi lại, chuẩn hóa mô tả và phân loại nhóm kỹ thuật.
 Thời gian ước tính: khoảng **12 phút/trường hợp**, cần kiểm chứng bằng dữ liệu thực tế.
 
 **AI có thể hỗ trợ ở đâu?**
